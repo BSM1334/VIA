@@ -1,215 +1,195 @@
-# VIA Project
+# VIA — Road Accident Reporting Platform
 
-VIA is a multi-service project for reporting and tracking road traffic incidents. The repository contains two main application stacks:
+<div align="center">
 
-- `VIA/` — a full-stack web app with a React frontend, Express backend, PostgreSQL database, and Python AI service.
-- `VIA api/` — a Laravel API that supports the project backend and server-side business logic.
+![VIA Banner](https://img.shields.io/badge/Project-VIA-0F172A?style=for-the-badge&logo=react)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)
+![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=nodedotjs)
+![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel)
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-336791?style=for-the-badge&logo=postgresql)
+![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker)
 
-This repo is structured as a monorepo to make setup and deployment easier for local development and containerized testing.
+</div>
 
-## Project structure
+A full-stack digital platform for reporting, reviewing, and managing road traffic accidents with a modern web interface, AI-assisted processing, and a secure API layer.
+
+## Overview
+
+VIA is designed to help users report accidents quickly, track what was submitted, and provide backend support for risk analysis and incident management. The project combines a React frontend, a Node/Express API, a PostgreSQL database, an AI processing service, and a Laravel-based API layer for structured data handling and extensibility.
+
+### Highlights
+
+- Modern dashboard-driven frontend for accident reporting and monitoring
+- Express-based backend with authentication and route handling
+- AI service for intelligent processing and supporting classification tasks
+- Laravel API for robust server-side application logic
+- Dockerized local setup for fast onboarding and testing
+- Clean monorepo structure suitable for portfolio presentation and further expansion
+
+---
+
+## Screenshots
+
+<div align="center">
+
+<img src="./VIA/project/WhatsApp%20Image%202025-11-13%20at%202.55.03%20PM.jpeg" alt="VIA dashboard screenshot" width="420" />
+<img src="./VIA/project/WhatsApp%20Image%202025-11-13%20at%202.55.03%20PM%20(1).jpeg" alt="VIA form screenshot" width="420" />
+
+<img src="./VIA/project/WhatsApp%20Image%202025-11-13%20at%202.55.04%20PM.jpeg" alt="VIA reporting workflow screenshot" width="860" />
+
+</div>
+
+---
+
+## Architecture
+
+```mermaid
+flowchart LR
+    User[User / Operator] --> FE[React Frontend\nVIA/frontend]
+    FE --> BE[Express Backend\nVIA/backend]
+    BE --> DB[(PostgreSQL\nVIA/db)]
+    BE --> AI[AI Service\nPython / Flask-style API\nVIA/ai-service]
+    FE --> API[Laravel API\nVIA api]
+    API --> DB
+
+    classDef frontend fill:#61DAFB,stroke:#0F172A,color:#0F172A;
+    classDef backend fill:#339933,stroke:#0F172A,color:#fff;
+    classDef ai fill:#3776AB,stroke:#0F172A,color:#fff;
+    classDef api fill:#FF2D20,stroke:#0F172A,color:#fff;
+    classDef data fill:#336791,stroke:#0F172A,color:#fff;
+
+    class FE frontend;
+    class BE backend;
+    class AI ai;
+    class API api;
+    class DB data;
+```
+
+---
+
+## Tech Stack
+
+### Frontend
+- React + Vite
+- Tailwind CSS
+- React Router
+
+### Backend
+- Node.js
+- Express.js
+- PostgreSQL
+- JWT-based auth flow
+
+### AI Layer
+- Python
+- AI service endpoint for smart processing and integrations
+
+### API Layer
+- Laravel 12
+- PHP 8.2+
+- Composer-managed setup
+
+### Deployment / Local Dev
+- Docker Compose
+- Environment-based configuration
+
+---
+
+## Repository Structure
 
 ```text
 VIA website/
 ├── README.md
 ├── SETUP.md
-├── package-lock.json
 ├── VIA/
 │   ├── ai-service/
-│   │   ├── app.py
-│   │   ├── Dockerfile
-│   │   └── requirements.txt
 │   ├── backend/
-│   │   ├── src/
-│   │   ├── routes/
-│   │   ├── db.js
-│   │   ├── server.js
-│   │   ├── Dockerfile
-│   │   └── package.json
 │   ├── frontend/
-│   │   ├── src/
-│   │   ├── package.json
-│   │   └── Dockerfile
 │   ├── db/
 │   ├── docker-compose.yml
-│   ├── package.json
-│   └── vite.config.js
-└── VIA api/
-    ├── app/
-    ├── config/
-    ├── database/
-    ├── public/
-    ├── routes/
-    ├── resources/
-    ├── tests/
-    ├── composer.json
-    ├── package.json
-    ├── phpunit.xml
-    └── vite.config.js
+│   └── package.json
+├── VIA api/
+│   ├── app/
+│   ├── config/
+│   ├── database/
+│   ├── routes/
+│   ├── resources/
+│   ├── composer.json
+│   └── package.json
+└── .gitignore
 ```
 
-## Tech stack
+---
 
-### Main app (`VIA/`)
-- React + Vite + Tailwind
-- Express.js backend
-- PostgreSQL database
-- Python AI service
-- Docker Compose support
+## Getting Started
 
-### Laravel API (`VIA api/`)
-- Laravel 12
-- PHP 8.2+
-- Composer
-- SQLite or database configured for local development
+### Prerequisites
 
-## Prerequisites
-
-Before running the project, install the following:
-
-- Node.js 18+ and npm
+- Node.js 18+
+- npm
 - Python 3.10+
 - PHP 8.2+
 - Composer
-- Docker and Docker Compose (optional but recommended)
+- Docker + Docker Compose
 - Git
 
-## Quick start with Docker
-
-From the `VIA/` folder:
+### Recommended quick start
 
 ```bash
 cd VIA
 docker compose up --build
 ```
 
-This starts:
-- PostgreSQL database on port 5432
-- Express backend on port 4000
-- React frontend on port 3000
-- AI service on port 5000
+This starts the main application services locally:
 
-## Local development setup
+- Frontend: http://localhost:3000
+- Backend: http://localhost:4000
+- AI service: http://localhost:5000
+- PostgreSQL: localhost:5432
 
-### 1) Frontend
+### Manual setup
 
-```bash
-cd VIA/frontend
-npm install
-npm run dev
-```
-
-The frontend should be available on:
-- http://localhost:5173
-
-### 2) Backend
-
-```bash
-cd VIA/backend
-npm install
-npm run dev
-```
-
-The backend runs on:
-- http://localhost:4000
-
-### 3) AI service
-
-```bash
-cd VIA/ai-service
-python -m venv .venv
-. .venv/bin/activate   # Linux/macOS
-# or .venv\Scripts\activate   # Windows
-pip install -r requirements.txt
-python app.py
-```
-
-The AI service runs on:
-- http://localhost:5000
-
-### 4) Laravel API
-
-```bash
-cd "VIA api"
-composer install
-cp .env.example .env
-php artisan key:generate
-php artisan migrate
-php artisan serve
-```
-
-The Laravel API runs on:
-- http://localhost:8000
-
-## Environment variables
-
-The app expects environment variables for certain services. Check the existing config files and `.env.example` files before running in production. For local development, the included Docker setup sets the most common values automatically.
-
-Common examples:
-
-```env
-DATABASE_URL=postgres://via_admin:via_pass@localhost:5432/via_db
-JWT_SECRET=verysecret
-AI_SERVICE_URL=http://localhost:5000
-VITE_API_URL=http://localhost:4000
-```
-
-## Useful commands
-
-### Root project
-
-```bash
-git status
-git add .
-git commit -m "Update project"
-git push
-```
-
-### Frontend
-
-```bash
-npm run dev
-npm run build
-npm run preview
-```
-
-### Backend
-
-```bash
-npm run dev
-npm start
-```
-
-### Laravel
-
-```bash
-php artisan test
-php artisan migrate
-php artisan serve
-```
-
-## Notes
-
-- The repository currently contains two separate application stacks that may be used together or independently depending on the deployment scenario.
-- If you use Docker, start from the `VIA/` folder for the Node/React application setup.
-- For Laravel-only work, use the `VIA api/` folder directly.
-- Keep environment files local and do not commit secrets to version control.
-
-## License
-
-This project is currently distributed without a separate project license file unless otherwise specified by the repository owner.
-
-## Contributing
-
-Use feature branches and keep changes focused:
-
-```bash
-git checkout -b feature/my-change
-git add .
-git commit -m "Add my change"
-git push origin feature/my-change
-```
+For detailed local installation steps, see [SETUP.md](SETUP.md).
 
 ---
 
-For a more detailed step-by-step setup, see [SETUP.md](SETUP.md).
+## Project Goals
+
+This project was built to demonstrate practical full-stack engineering in a realistic domain:
+
+- user-facing reporting experience
+- backend processing and validation
+- AI-assisted workflows
+- API integration patterns
+- Dockerized deployment readiness
+- modular architecture for future extension
+
+---
+
+## Development Notes
+
+- The repository contains two related application stacks that can be used together or independently.
+- The `VIA/` folder contains the fuller app stack for containerized local development.
+- The `VIA api/` folder provides a Laravel API layer for server-side logic and extension opportunities.
+- Environment secrets should remain local and should not be committed to version control.
+
+---
+
+## License
+
+This project is currently shared as a development portfolio project without a separate project license file unless otherwise specified by the owner.
+
+---
+
+## Contact / Portfolio
+
+Use this repository as a demonstration of:
+
+- full-stack development
+- system design thinking
+- API and service integration
+- responsive UI development
+- multi-service architecture planning
+
+If you'd like, I can also add a dedicated project showcase section with feature highlights, demo links, and a team contribution breakdown.
