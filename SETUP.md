@@ -85,23 +85,28 @@ php artisan serve
 ```
 
 The Laravel app should then be available at:
+
 - http://localhost:8000
 
 ## 5. Common troubleshooting
 
 ### `npm install` fails
+
 - Check that Node.js and npm are installed properly.
 - Delete `node_modules` and `package-lock.json` if needed and reinstall.
 
 ### `composer install` fails
+
 - Ensure PHP 8.2+ and Composer are installed.
 - Confirm the required extensions are enabled on your machine.
 
 ### Docker containers do not start
+
 - Check that Docker is running.
 - Ensure the ports 3000, 4000, 5000, and 5432 are free.
 
 ### Laravel app cannot connect to database
+
 - Confirm your `.env` file is configured correctly.
 - Run the migration command again after checking database settings.
 

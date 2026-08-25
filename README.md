@@ -29,19 +29,6 @@ VIA is designed to help users report accidents quickly, track what was submitted
 
 ---
 
-## Screenshots
-
-<div align="center">
-
-<img src="./VIA/project/WhatsApp%20Image%202025-11-13%20at%202.55.03%20PM.jpeg" alt="VIA dashboard screenshot" width="420" />
-<img src="./VIA/project/WhatsApp%20Image%202025-11-13%20at%202.55.03%20PM%20(1).jpeg" alt="VIA form screenshot" width="420" />
-
-<img src="./VIA/project/WhatsApp%20Image%202025-11-13%20at%202.55.04%20PM.jpeg" alt="VIA reporting workflow screenshot" width="860" />
-
-</div>
-
----
-
 ## Architecture
 
 ```mermaid
@@ -71,26 +58,31 @@ flowchart LR
 ## Tech Stack
 
 ### Frontend
+
 - React + Vite
 - Tailwind CSS
 - React Router
 
 ### Backend
+
 - Node.js
 - Express.js
 - PostgreSQL
 - JWT-based auth flow
 
 ### AI Layer
+
 - Python
 - AI service endpoint for smart processing and integrations
 
 ### API Layer
+
 - Laravel 12
 - PHP 8.2+
 - Composer-managed setup
 
 ### Deployment / Local Dev
+
 - Docker Compose
 - Environment-based configuration
 
