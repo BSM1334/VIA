@@ -159,6 +159,46 @@ This project was built to demonstrate practical full-stack engineering in a real
 
 ---
 
+## Project Showcase
+
+VIA brings accident reporting, operational review, and intelligent processing into one connected workflow.
+
+### Feature Highlights
+
+- **Fast accident reporting** — Capture incident details through a focused, dashboard-driven React interface.
+- **Incident monitoring** — Track submitted reports and support review workflows from a central workspace.
+- **Secure access** — Protect user workflows with JWT-based authentication through the Express backend.
+- **AI-assisted processing** — Send report data to the Python service for classification and future risk-analysis integrations.
+- **Structured data management** — Use PostgreSQL-backed services and Laravel API endpoints for consistent server-side handling.
+- **Containerized development** — Start the frontend, backend, AI service, and database together with Docker Compose.
+
+### Demo Links
+
+Run the application with `cd VIA && docker compose up --build`, then open:
+
+- [VIA frontend](http://localhost:3000) — Main reporting and monitoring experience
+- [Express backend](http://localhost:4000) — Backend service base URL
+- [AI service](http://localhost:5000) — AI processing service base URL
+- [Laravel API](VIA%20api/README.md) — API-layer setup and usage notes
+- [Setup guide](SETUP.md) — Manual installation and local development instructions
+
+The local service links require the corresponding Docker Compose services to be running.
+
+### Team Contribution Breakdown
+
+| Contribution area        | Responsibilities                                                                                      |
+| ------------------------ | ----------------------------------------------------------------------------------------------------- |
+| Product and UX           | Define reporting workflows, dashboard information architecture, and responsive user journeys.         |
+| Frontend engineering     | Build React views, reusable components, form interactions, routing, and API integration.              |
+| Backend engineering      | Implement Express routes, authentication, validation, report handling, and service integration.       |
+| AI integration           | Develop the Python service interface and connect classification or risk-analysis workflows.           |
+| API and data engineering | Maintain Laravel controllers, PostgreSQL schemas, migrations, seeders, and data contracts.            |
+| DevOps and quality       | Maintain Docker Compose, environment configuration, testing, documentation, and deployment readiness. |
+
+For a team presentation, assign names and percentage ownership to the contribution areas above based on the actual work completed.
+
+---
+
 ## Development Notes
 
 - The repository contains two related application stacks that can be used together or independently.
