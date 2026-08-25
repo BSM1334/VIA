@@ -223,5 +223,3 @@ Use this repository as a demonstration of:
 - API and service integration
 - responsive UI development
 - multi-service architecture planning
-
-If you'd like, I can also add a dedicated project showcase section with feature highlights, demo links, and a team contribution breakdown.
