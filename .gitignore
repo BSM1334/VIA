@@ -1,0 +1,36 @@
+# Root-level ignores
+node_modules/
+dist/
+build/
+*.log
+.env
+.env.*
+.DS_Store
+
+# Project app ignores
+VIA/node_modules/
+VIA/dist/
+VIA/build/
+VIA/.env
+VIA/.env.*
+
+VIA api/node_modules/
+VIA api/vendor/
+VIA api/storage/logs/
+VIA api/storage/framework/cache/
+VIA api/storage/framework/sessions/
+VIA api/storage/framework/views/
+VIA api/bootstrap/cache/
+VIA api/.env
+VIA api/.env.*
+
+# General generated files
+**/node_modules/
+**/vendor/
+**/.env
+**/.env.*
+**/storage/logs/
+**/storage/framework/cache/
+**/storage/framework/sessions/
+**/storage/framework/views/
+**/bootstrap/cache/
