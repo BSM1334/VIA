@@ -214,9 +214,13 @@ This project is currently shared as a development portfolio project without a se
 
 ---
 
-## Contact / Portfolio
+## Author
+
+Basel Yasser
 
 Basel Yasser
 
 - Portfolio: [MyPortfolio.com](https://basel-portfolio.lovable.app/)
 - Email: [baselderbala1@gmail.com](mailto:baselderbala1@gmail.com)
+Portfolio: MyPortfolio.com
+Email: baselderbala1@gmail.com
