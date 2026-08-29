@@ -214,12 +214,9 @@ This project is currently shared as a development portfolio project without a se
 
 ---
 
-## Contact / Portfolio
+## Author
 
-Use this repository as a demonstration of:
+Basel Yasser
 
-- full-stack development
-- system design thinking
-- API and service integration
-- responsive UI development
-- multi-service architecture planning
+Portfolio: MyPortfolio.com
+Email: baselderbala1@gmail.com
